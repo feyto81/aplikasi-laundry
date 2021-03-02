@@ -84,7 +84,7 @@
                                     @endif
                                     
                                     <td>
-                                        <a href="{{route('admin.cms_users.edit/'.$row->id)}}" class="btn btn-danger btn-rounded waves-effect waves-light">
+                                        <a href="{{url('admin/cms_users/edit/'.$row->id)}}" class="btn btn-danger btn-rounded waves-effect waves-light">
                                             <i class="bx bx-edit font-size-16 align-middle"></i>
                                         </a>
                                         <a href="javascript: void(0);" class="btn btn-warning btn-rounded waves-effect waves-light btn-delete" title="Delete Data" user-id="{{$row->id}}">

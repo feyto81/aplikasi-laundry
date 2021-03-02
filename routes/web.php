@@ -23,4 +23,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'c
     Route::get('home', 'HomeController@index')->name('home');
     Route::resource('cms_users', 'UserController');
     Route::get('cms_users/delete/{id}', 'UserController@destroy');
+    Route::post('cms_users/update/{id}', 'UserController@update');
+    Route::get('cms_users/edit/{id}', 'UserController@edit');
+    Route::post('cms_users/update/{id}', 'UserController@update');
 });
