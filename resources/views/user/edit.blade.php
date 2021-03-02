@@ -129,7 +129,7 @@
                                         Mohon lengkapi form yang sudah di sediakan untuk dapat melanjutkan proses !
                                     </div>
                                     <br>
-                                    <button name="submit" type="submit" class="btn btn-primary" value="save">Save</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
                                     <a href="{{route('admin.cms_users.index')}}" class="btn btn-danger">Cancel</a>
                                 </div>
                             </div>

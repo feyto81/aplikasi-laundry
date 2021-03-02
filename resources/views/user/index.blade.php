@@ -71,19 +71,43 @@
                                     
                                     <td>{{$row->name}}</td>
                                     <td>{{$row->email}}</td>
-                                    <td><span class="badge rounded-pill bg-success">{{$row->Outlet->name}}</span></td>
+                                    <td><span class="badge rounded-pill bg-primary">{{$row->Outlet->name}}</span></td>
                                     <td><span class="badge rounded-pill bg-info">{{$row->Level->name}}</span></td>
                                     @if ($row->status == 1)
                                     <td>
-                                        <span class="badge rounded-pill bg-primary">Active</span>
+                                        <span class="badge rounded-pill bg-success">Active</span>
                                     </td>
                                     @else
                                     <td>
-                                        <span class="badge rounded-pill bg-primary">Unactive</span>
+                                        <span class="badge rounded-pill bg-danger">Unactive</span>
                                     </td>
                                     @endif
                                     
                                     <td>
+                                        <a title="Detail User" id="set_dtl"
+                                        data-bs-toggle="modal" data-bs-target="#modal-detail"
+                                        data-username="{{$row->username}}"
+                                        data-name="{{$row->name}}"
+                                        data-email="{{$row->email}}"
+                                        data-outlet="{{$row->Outlet->name}}"
+                                        data-privilege="{{$row->Level->name}}"
+                                        data-photo="{{$row->photo}}" 
+                                        data-status="{{$row->status}}"
+                                        data-created="{{$row->created_at}}"
+                                        data-updated="{{$row->updated_at}}" 
+                                        class="btn btn-secondary btn-rounded waves-effect waves-light">
+                                            <i class="bx bx-bullseye font-size-16 align-middle"></i>
+                                        </a>
+                                        @if ($row->status == 0)
+                                        <a href="{{url('admin/cms_users/active/'.$row->id)}}" class="btn btn-success btn-rounded waves-effect waves-light">
+                                            <i class="bx bxs-hand-down font-size-16 align-middle"></i>
+                                        </a>
+                                        @else
+                                        <a href="{{url('admin/cms_users/unactive/'.$row->id)}}" class="btn btn-danger btn-rounded waves-effect waves-light">
+                                            <i class="bx bxs-hand-up font-size-16 align-middle"></i>
+                                        </a>
+                                        @endif
+                                       
                                         <a href="{{url('admin/cms_users/edit/'.$row->id)}}" class="btn btn-danger btn-rounded waves-effect waves-light">
                                             <i class="bx bx-edit font-size-16 align-middle"></i>
                                         </a>
@@ -101,6 +125,59 @@
             </div>
         </div>
         
+    </div>
+</div>
+<div id="modal-detail" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myModalLabel">User Detail</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body table-responsive">
+                <table class="table table-bordered table-striped" id="sampleTable">
+                  <tbody>
+                    
+                    <tr>
+                      <th style="width: 35%">Username</th>
+                      <td><span id="username"></span></td>
+                    </tr>
+                    <tr>
+                      <th style="">Name</th>
+                      <td><span id="name"></span></td>
+                    </tr>
+                    <tr>
+                      <th style="">Email</th>
+                      <td><span id="email"></span></td>
+                    </tr>
+                    <tr>
+                      <th style="">Outlet</th>
+                      <td><span id="outlet"></span></td>
+                    </tr>
+                    <tr>
+                      <th style="">Privilege</th>
+                      <td><span id="privilege"></span></td>
+                    </tr>
+                    <tr>
+                      <th style="">Status</th>
+                      <td><span id="status"></span></td>
+                    </tr>
+                    <tr>
+                        <th style="">Photo</th>
+                        <td><img class="avatar-lg" widht="140px" src="" id="img-data"></td>
+                    </tr>
+                    <tr>
+                        <th style="">Created</th>
+                        <td><span id="created"></span></td>
+                    </tr>
+                    <tr>
+                        <th style="">Updated</th>
+                        <td><span id="updated"></span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
     </div>
 </div>
 @endsection
@@ -145,5 +222,27 @@
         }
         })
     });
+    $(document).ready(function() {
+        $(document).on('click', '#set_dtl', function() {
+            var username = $(this).data('username');
+            var name = $(this).data('name');
+            var email = $(this).data('email');
+            var privilege = $(this).data('privilege');
+            var outlet = $(this).data('outlet');
+            var status = $(this).data('status');
+            var photo = $(this).data('photo');
+            var created = $(this).data('created');
+            var updated = $(this).data('updated');
+            $('#username').text(username);
+            $('#name').text(name);
+            $('#email').text(email);
+            $('#privilege').text(privilege);
+            $('#outlet').text(outlet);
+            $('#created').text(created);
+            $('#updated').text(updated);
+            $('#img-data').attr('src', "{{asset('avatar/')}}/"+photo);
+
+        })
+    })
 </script>
 @endpush

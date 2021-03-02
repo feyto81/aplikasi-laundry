@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Hash;
 use File;
+use DB;
 
 class UserController extends Controller
 {
@@ -95,7 +96,7 @@ class UserController extends Controller
         if ($request->get('password') != '') {
             $user->password = Hash::make($request->password);
         }
-        if ($request->get('photo') != '') {
+        if ($request->file('photo') != '') {
             File::delete('avatar/' . $user->photo);
             $photo = $request->file('photo');
             $tujuan_upload = 'avatar';
@@ -103,12 +104,29 @@ class UserController extends Controller
             $photo->move($tujuan_upload, $photo_name);
             $user->photo = $photo_name;
         }
-        // $result = $user->save();
-        dd($user);
-        // if ($result) {
-        //     return redirect()->route('admin.cms_users.index')->with(['success' => 'User has been updated']);
-        // } else {
-        //     return redirect()->back();
-        // }
+
+        $result = $user->save();
+        // dd($user);
+        if ($result) {
+            return redirect()->route('admin.cms_users.index')->with(['success' => 'User has been updated']);
+        } else {
+            return redirect()->back();
+        }
+    }
+
+    public function active($id)
+    {
+        DB::table('users')
+            ->where('id', $id)
+            ->update(['status' => 1]);
+        return redirect()->route('admin.cms_users.index')->with(['success' => 'User has been unactive']);
+    }
+
+    public function unactive($id)
+    {
+        DB::table('users')
+            ->where('id', $id)
+            ->update(['status' => 0]);
+        return redirect()->route('admin.cms_users.index')->with(['success' => 'User has been active']);
     }
 }

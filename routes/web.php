@@ -26,4 +26,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'c
     Route::post('cms_users/update/{id}', 'UserController@update');
     Route::get('cms_users/edit/{id}', 'UserController@edit');
     Route::post('cms_users/update/{id}', 'UserController@update');
+    Route::get('cms_users/active/{id}', 'UserController@active');
+    Route::get('cms_users/unactive/{id}', 'UserController@unactive');
 });
