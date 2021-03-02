@@ -13,7 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return redirect()->route('home');
+});
 Route::get('admin/login', 'HomeController@login')->name('login');
-Route::group(['prefix' => 'admin'], function () {
+Route::post('admin/postlogin', 'HomeController@postLogin');
+Route::get('admin/logout', 'HomeController@logout')->name('logout');
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'checkRole:1']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
 });

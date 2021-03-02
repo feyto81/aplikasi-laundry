@@ -17,7 +17,9 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name', 100);
             $table->string('username', 30);
+            $table->string('email');
             $table->string('password');
+            $table->string('photo');
             $table->unsignedBigInteger('outlet_id');
             $table->foreign('outlet_id')->references('id')->on('outlet');
             $table->unsignedBigInteger('level_id');

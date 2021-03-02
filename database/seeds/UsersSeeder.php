@@ -15,7 +15,9 @@ class UsersSeeder extends Seeder
         $init = new User;
         $init->name = "feyto";
         $init->username = "admin";
+        $init->email = "admin@gmail.com";
         $init->password = Hash::make("123456");
+        $init->photo = "NULL";
         $init->outlet_id = "1";
         $init->level_id = "1";
         $init->save();

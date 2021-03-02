@@ -3,6 +3,7 @@
 @section('content')
 <div class="page-content">
     <div class="container-fluid">
+        
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -16,7 +17,13 @@
                 </div>
             </div>
         </div>
-
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="mdi mdi-check-all me-2"></i>
+            {{$message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
         <div class="row">
             <div class="col-xl-4">
                 <div class="card overflow-hidden">
@@ -25,7 +32,7 @@
                             <div class="col-7">
                                 <div class="text-primary p-3">
                                     <h5 class="text-primary">Welcome Back !</h5>
-                                    <p>Skote Dashboard</p>
+                                    <p>Laundry Application</p>
                                 </div>
                             </div>
                             <div class="col-5 align-self-end">
@@ -39,22 +46,16 @@
                                 <div class="avatar-md profile-user-wid mb-4">
                                     <img src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="" class="img-thumbnail rounded-circle">
                                 </div>
-                                <h5 class="font-size-15 text-truncate">Henry Price</h5>
-                                <p class="text-muted mb-0 text-truncate">UI/UX Designer</p>
+                                <h5 class="font-size-15 text-truncate">{{Auth::user()->name}}</h5>
+                                <p class="text-muted mb-0 text-truncate">{{Auth::user()->Level->name}}</p>
                             </div>
 
                             <div class="col-sm-8">
                                 <div class="pt-4">
 
                                     <div class="row">
-                                        <div class="col-6">
-                                            <h5 class="font-size-15">125</h5>
-                                            <p class="text-muted mb-0">Projects</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <h5 class="font-size-15">$1245</h5>
-                                            <p class="text-muted mb-0">Revenue</p>
-                                        </div>
+                                        <br>
+                                        <br>
                                     </div>
                                     <div class="mt-4">
                                         <a href="" class="btn btn-primary waves-effect waves-light btn-sm">View Profile <i class="mdi mdi-arrow-right ms-1"></i></a>
