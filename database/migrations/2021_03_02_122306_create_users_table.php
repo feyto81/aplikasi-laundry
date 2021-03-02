@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->foreign('outlet_id')->references('id')->on('outlet');
             $table->unsignedBigInteger('level_id');
             $table->foreign('level_id')->references('id')->on('level');
+            $table->string('status');
             $table->timestamps();
         });
     }

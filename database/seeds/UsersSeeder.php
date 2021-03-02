@@ -20,6 +20,7 @@ class UsersSeeder extends Seeder
         $init->photo = "NULL";
         $init->outlet_id = "1";
         $init->level_id = "1";
+        $init->status = "1";
         $init->save();
     }
 }

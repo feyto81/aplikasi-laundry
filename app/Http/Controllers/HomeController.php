@@ -28,11 +28,8 @@ class HomeController extends Controller
         ]);
         if (Auth::attempt($request->only('email', 'password'))) {
             $username = Auth::user()->username;
-            // toastr()->success('Selamat Datang Di Sipakdejugo', 'Success');
-            return redirect()->route('home')->with(['success' => 'Welcome back ' . $username]);
+            return redirect()->route('admin.home')->with(['success' => 'Welcome back ' . $username]);
         }
-        // toastr()->error('Maaf Cek Kembali Username Dan Password', 'Gagal');
-
         return redirect()->route('login')->with(['error' => 'Invalid email or password']);
     }
 
