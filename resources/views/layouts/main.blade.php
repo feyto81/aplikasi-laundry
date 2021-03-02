@@ -32,7 +32,7 @@
                                     <span key="t-crypto">Users Management</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="crypto-wallet.html" key="t-wallet">Add New User</a></li>
+                                    <li><a href="{{route('admin.cms_users.create')}}" key="t-wallet">Add New User</a></li>
                                     <li><a href="{{route('admin.cms_users.index')}}" key="t-buy">List User</a></li>
                                 </ul>
                             </li>
