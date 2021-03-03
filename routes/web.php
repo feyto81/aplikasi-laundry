@@ -33,4 +33,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'c
     Route::get('outlet/delete/{id}', 'OutletController@destroy');
     Route::get('outlet/edit/{id}', 'OutletController@edit');
     Route::post('outlet/update/{id}', 'OutletController@update');
+
+    Route::resource('member', 'MemberController');
+    Route::get('member/delete/{id}', 'MemberController@destroy');
+    Route::get('member/edit/{id}', 'MemberController@edit');
+    Route::post('member/update/{id}', 'MemberController@update');
 });

@@ -17,7 +17,7 @@ class CreateMemberTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('address');
-            $table->enum('jenis_kelamin', ['L', 'P']);
+            $table->enum('gender', ['L', 'P']);
             $table->string('phone_number');
             $table->timestamps();
         });

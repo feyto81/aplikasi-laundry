@@ -28,12 +28,32 @@
                             <li class="menu-title" key="t-menu">Manajemen</li>
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-user"></i>
+                                    <i class="bx bx-store-alt"></i>
                                     <span key="t-crypto">Outlet</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{route('admin.outlet.create')}}" key="t-wallet">Add New Outlet</a></li>
                                     <li><a href="{{route('admin.outlet.index')}}" key="t-buy">List Outlet</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="bx bx-group"></i>
+                                    <span key="t-crypto">Member</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('admin.member.create')}}" key="t-wallet">Add New Member</a></li>
+                                    <li><a href="{{route('admin.member.index')}}" key="t-buy">List Member</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="bx bx-group"></i>
+                                    <span key="t-crypto">Paket</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('admin.paket.create')}}" key="t-wallet">Add New Paket</a></li>
+                                    <li><a href="{{route('admin.paket.index')}}" key="t-buy">List Paket</a></li>
                                 </ul>
                             </li>
                             <li class="menu-title" key="t-menu">Administrator</li>
