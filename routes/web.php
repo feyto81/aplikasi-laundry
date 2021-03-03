@@ -28,4 +28,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'c
     Route::post('cms_users/update/{id}', 'UserController@update');
     Route::get('cms_users/active/{id}', 'UserController@active');
     Route::get('cms_users/unactive/{id}', 'UserController@unactive');
+
+    Route::resource('outlet', 'OutletController');
+    Route::get('outlet/delete/{id}', 'OutletController@destroy');
+    Route::get('outlet/edit/{id}', 'OutletController@edit');
+    Route::post('outlet/update/{id}', 'OutletController@update');
 });
