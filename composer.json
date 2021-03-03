@@ -18,6 +18,7 @@
         "maatwebsite/excel": "^3.1",
         "nesbot/carbon": "^2.45",
         "realrashid/sweet-alert": "^3.2",
+        "spatie/laravel-permission": "^4.0",
         "yoeunes/toastr": "^1.2"
     },
     "require-dev": {
