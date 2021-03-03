@@ -38,4 +38,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'c
     Route::get('member/delete/{id}', 'MemberController@destroy');
     Route::get('member/edit/{id}', 'MemberController@edit');
     Route::post('member/update/{id}', 'MemberController@update');
+
+    Route::resource('paket', 'PaketController');
+    Route::get('paket/delete/{id}', 'PaketController@destroy');
+    Route::get('paket/edit/{id}', 'PaketController@edit');
+    Route::post('paket/update/{id}', 'PaketController@update');
 });

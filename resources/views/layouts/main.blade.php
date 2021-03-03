@@ -48,13 +48,20 @@
                             </li>
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-group"></i>
+                                    <i class="bx bx-book-content"></i>
                                     <span key="t-crypto">Paket</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{route('admin.paket.create')}}" key="t-wallet">Add New Paket</a></li>
                                     <li><a href="{{route('admin.paket.index')}}" key="t-buy">List Paket</a></li>
                                 </ul>
+                            </li>
+                            <li class="menu-title">Navigation</li>
+                            <li>
+                                <a href="{{url('')}}" class="waves-effect">
+                                    <i class="bx bx-cart-alt"></i>
+                                    <span key="t-transactions">Transaction</span>
+                                </a>
                             </li>
                             <li class="menu-title" key="t-menu">Administrator</li>
                             <li>
