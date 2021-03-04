@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Member;
 use App\Models\Outlet;
 use App\Models\Paket;
+use App\Models\Transaction;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -18,6 +20,8 @@ class HomeController extends Controller
         $data['outlet'] = Outlet::all()->count();
         $data['member'] = Member::all()->count();
         $data['paket'] = Paket::all()->count();
+        $data['transaction'] = Transaction::all()->count();
+        $data['user'] = User::all()->count();
         return view('home', $data);
     }
 

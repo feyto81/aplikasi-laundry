@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Management User | Laundry Application')
+@section('title','Transaction | Laundry Application')
 @section('css')
 
 @endsection
