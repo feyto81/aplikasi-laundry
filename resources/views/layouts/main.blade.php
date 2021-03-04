@@ -57,11 +57,16 @@
                                 </ul>
                             </li>
                             <li class="menu-title">Navigation</li>
+                            
                             <li>
-                                <a href="{{route('admin.transaction.index')}}" class="waves-effect">
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="bx bx-cart-alt"></i>
-                                    <span key="t-transactions">Transaction</span>
+                                    <span key="t-crypto">Transaction</span>
                                 </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('admin.transaction.create')}}" key="t-wallet">Add New Order</a></li>
+                                    <li><a href="{{route('admin.transaction.index')}}" key="t-buy">Order List</a></li>
+                                </ul>
                             </li>
                             <li class="menu-title" key="t-menu">Administrator</li>
                             <li>

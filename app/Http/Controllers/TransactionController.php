@@ -9,8 +9,8 @@ class TransactionController extends Controller
 {
     public function index()
     {
-        $data['page_title'] = "Transaction";
-        $data['page_sub_title'] = "Transaction";
+        $data['page_title'] = "Order List";
+        $data['page_sub_title'] = "Order List";
         $data['transaction'] = Transaction::all();
         return view('transaction.index', $data);
     }

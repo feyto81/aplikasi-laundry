@@ -23,9 +23,18 @@
                 </div>
             </div>
         </div>
+        
         <div class="row">
-            <div class="col-12">
-                <a href="{{route('admin.transaction.create')}}" class="btn btn-success waves-effect btn-label waves-light"><i class="bx bxs-plus-square label-icon"></i> Add</a>
+            <div class="col-8">
+                <a href="#" class="btn btn-primary">Member</a>
+                <a href="#" class="btn btn-warning">Non Member</a>
+            </div>
+            <div class="col-4">
+                
+                <a href="#" class="btn btn-danger">Baru</a>
+                <a href="#" class="btn btn-info">Proses</a>
+                <a href="#" class="btn btn-success">Selesai</a>
+                <a href="#" class="btn btn-secondary">Di ambil</a>
             </div>
         </div>
         <br>
