@@ -25,7 +25,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <a href="{{route('admin.paket.create')}}" class="btn btn-success waves-effect btn-label waves-light"><i class="bx bxs-plus-square label-icon"></i> Add</a>
+                <a href="{{route('admin.transaction.create')}}" class="btn btn-success waves-effect btn-label waves-light"><i class="bx bxs-plus-square label-icon"></i> Add</a>
             </div>
         </div>
         <br>
@@ -38,7 +38,60 @@
         @endif
         <br>
         <div class="row">
-            
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        
+
+                        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                            <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Invoice Code</th>
+                                <th>Member</th>
+                                <th>Date</th>
+                                <th>Outlet</th>
+                                <th>Kasir</th>
+                                <th>Status</th>
+                                <th>Paid</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+
+
+                            <tbody>
+                                @foreach ($transaction as $row)
+                                <tr>
+                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{$row->invoice_code}}</td>
+                                    <td>{{$row->Member->name}}</td>
+                                    <td>{{$row->date}}</td>
+                                    <td>{{$row->User->name}}</td>
+                                    @if ($row->status == "baru")
+                                        <td><span class="badge rounded-pill bg-primary">Baru</span></td>
+                                    @elseif($row->status == "proses")
+                                        <td><span class="badge rounded-pill bg-primary">Proses</span></td>
+                                    @elseif($row->status == "selesai")
+                                        <td><span class="badge rounded-pill bg-primary">Selesai</span></td>
+                                    @elseif($row->status == "diambil")
+                                        <td><span class="badge rounded-pill bg-primary">Di Ambil</span></td>
+                                    @endif
+                                    <td>
+                                        
+                                        
+                                        <a href="javascript: void(0);" class="btn btn-warning btn-rounded waves-effect waves-light btn-delete" title="Delete Data" paket-id="{{$row->id}}">
+                                            <i class="bx bx-trash-alt font-size-16 align-middle"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
         </div>
         
     </div>
@@ -86,5 +139,22 @@
         }
         })
     });
+    $(document).ready(function() {
+        $(document).on('click', '#set_dtl', function() {
+            var outlet = $(this).data('outlet');
+            var type = $(this).data('type');
+            var paket_name = $(this).data('paket_name');
+            var price = $(this).data('price');
+            var created = $(this).data('created');
+            var updated = $(this).data('updated');
+            $('#outlet').text(outlet);
+           
+            $('#type').text(type);
+            $('#paket_name').text(paket_name);
+            $('#price').text(price);
+            $('#created').text(created);
+            $('#updated').text(updated);
+        })
+    })
 </script>
 @endpush

@@ -21,7 +21,7 @@ class CreateTransactionTable extends Migration
             $table->unsignedBigInteger('member_id');
             $table->dateTime('date');
             $table->dateTime('pay_date');
-            $table->integer('additional cost');
+            $table->integer('additional_cost');
             $table->integer('discon');
             $table->integer('tax');
             $table->enum('status', ['baru', 'proses', 'selesai', 'diambil']);
