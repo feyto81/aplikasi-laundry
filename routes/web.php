@@ -43,4 +43,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'c
     Route::get('paket/delete/{id}', 'PaketController@destroy');
     Route::get('paket/edit/{id}', 'PaketController@edit');
     Route::post('paket/update/{id}', 'PaketController@update');
+
+    Route::resource('transaction', 'TransactionController');
 });

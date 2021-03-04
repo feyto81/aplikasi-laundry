@@ -58,7 +58,7 @@
                             </li>
                             <li class="menu-title">Navigation</li>
                             <li>
-                                <a href="{{url('')}}" class="waves-effect">
+                                <a href="{{route('admin.transaction.index')}}" class="waves-effect">
                                     <i class="bx bx-cart-alt"></i>
                                     <span key="t-transactions">Transaction</span>
                                 </a>
