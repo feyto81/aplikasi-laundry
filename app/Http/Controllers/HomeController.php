@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Member;
+use App\Models\Outlet;
+use App\Models\Paket;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -12,6 +15,9 @@ class HomeController extends Controller
     {
         $data['page_title'] = "Dashboards";
         $data['page_sub_title'] = "Dashboard";
+        $data['outlet'] = Outlet::all()->count();
+        $data['member'] = Member::all()->count();
+        $data['paket'] = Paket::all()->count();
         return view('home', $data);
     }
 

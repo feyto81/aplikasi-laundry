@@ -4,7 +4,7 @@
 <head>
         
         <meta charset="utf-8" />
-        <title>Login | Skote - Admin & Dashboard Template</title>
+        <title>Login | Laundry Application</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" />
         <meta name="author" />
@@ -13,7 +13,7 @@
         <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
     </head>
-    <body>
+    <body style="background-color: #43a7f9">
         <div class="account-pages my-5 pt-sm-5">
             <div class="container">
                 <div class="row justify-content-center">
@@ -24,7 +24,7 @@
                                     <div class="col-7">
                                         <div class="text-primary p-4">
                                             <h5 class="text-primary">Welcome Back !</h5>
-                                            <p>Sign in to continue to Aplikasi Laundry.</p>
+                                            <p>Sign in to continue to Laundry Application.</p>
                                         </div>
                                     </div>
                                     <div class="col-5 align-self-end">
