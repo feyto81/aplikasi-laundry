@@ -74,6 +74,12 @@
                                     <li><a href="{{route('admin.cms_users.index')}}" key="t-buy">List User</a></li>
                                 </ul>
                             </li>
+                            <li>
+                                <a href="#" class="waves-effect">
+                                    <i class="bx bx-calendar"></i>
+                                    <span key="t-transactions">Log Activity</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
